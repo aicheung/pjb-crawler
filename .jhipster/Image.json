@@ -1,0 +1,44 @@
+{
+    "name": "Image",
+    "fields": [
+        {
+            "fieldName": "imageId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "origFileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uploadedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "views",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "favorites",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "tag",
+            "otherEntityRelationshipName": "images",
+            "relationshipName": "tags",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190418142551",
+    "entityTableName": "image",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

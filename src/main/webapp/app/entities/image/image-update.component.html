@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-image-heading">Create or edit a Image</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!image.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="image.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_imageId">Image Id</label>
+                    <input type="number" class="form-control" name="imageId" id="field_imageId"
+                        [(ngModel)]="image.imageId" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_origFileName">Orig File Name</label>
+                    <input type="text" class="form-control" name="origFileName" id="field_origFileName"
+                        [(ngModel)]="image.origFileName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_uploadedBy">Uploaded By</label>
+                    <input type="text" class="form-control" name="uploadedBy" id="field_uploadedBy"
+                        [(ngModel)]="image.uploadedBy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_views">Views</label>
+                    <input type="number" class="form-control" name="views" id="field_views"
+                        [(ngModel)]="image.views" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_favorites">Favorites</label>
+                    <input type="number" class="form-control" name="favorites" id="field_favorites"
+                        [(ngModel)]="image.favorites" />
+                </div>
+
+                <div class="form-group">
+                    <label for="field_tags">Tags</label>
+                    <select class="form-control" id="field_tags" multiple name="tags" [(ngModel)]="image.tags">
+                        <option [ngValue]="getSelected(image.tags, tagOption)" *ngFor="let tagOption of tags; trackBy: trackTagById">{{tagOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

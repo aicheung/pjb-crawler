@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="image">
+            <h2><span>Image</span> {{image.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Image Id</span></dt>
+                <dd>
+                    <span>{{image.imageId}}</span>
+                </dd>
+                <dt><span>Orig File Name</span></dt>
+                <dd>
+                    <span>{{image.origFileName}}</span>
+                </dd>
+                <dt><span>Uploaded By</span></dt>
+                <dd>
+                    <span>{{image.uploadedBy}}</span>
+                </dd>
+                <dt><span>Views</span></dt>
+                <dd>
+                    <span>{{image.views}}</span>
+                </dd>
+                <dt><span>Favorites</span></dt>
+                <dd>
+                    <span>{{image.favorites}}</span>
+                </dd>
+                <dt><span>Tags</span></dt>
+                <dd>
+                    <span *ngFor="let tags of image.tags; let last = last">
+                        <a [routerLink]="['/tag', tags?.id, 'view' ]">{{tags.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/image', image.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
