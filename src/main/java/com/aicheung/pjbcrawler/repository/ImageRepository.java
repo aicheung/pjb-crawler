@@ -25,4 +25,5 @@ public interface ImageRepository extends MongoRepository<Image, String> {
     @Query("{'id': ?0}")
     Optional<Image> findOneWithEagerRelationships(String id);
 
+    Image findByImageId(int i);
 }

@@ -128,4 +128,8 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+pjb:
+    imageBasePath: https://www.primejailbait.com/id/
+    imageSaveFolder: L:/PJB/
+    startIndex: 1
+    endIndex: 2688655
