@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "PJBCrawler",
+    "packageName": "com.aicheung.pjbcrawler",
+    "packageFolder": "com/aicheung/pjbcrawler",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "YmUyYzA5YWIyMmI5NmM1MjE5Y2RlNDY3ZjgxMjFkMzllODEzZDE2MmFlODllNGU2ODVjYmE5MWVjZDEzYmQzNjgxNGE0NGJkMDE0NmQ5YTVlMzk5ZTM5MmIxNjZmZGM3YWU3OTE3ZGE3YmY2NjU3YzhiOTMxNzdkN2I1MzNhZGQ=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "aicheung",
+  "repository-name": "pjb-crawler"
+}

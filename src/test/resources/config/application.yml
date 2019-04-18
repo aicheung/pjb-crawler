@@ -1,0 +1,82 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration is used for unit/integration tests.
+#
+# More information on profiles: https://www.jhipster.tech/profiles/
+# More information on configuration properties: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+
+spring:
+    application:
+        name: PJBCrawler
+    data:
+        mongodb:
+            host: localhost
+            port: 0
+            database: PJBCrawler
+    mail:
+        host: localhost
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: HTML
+
+
+server:
+    port: 10344
+    address: localhost
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+jhipster:
+    async:
+        core-pool-size: 1
+        max-pool-size: 50
+        queue-capacity: 10000
+    # To test logstash appender
+    logging:
+        logstash:
+            enabled: true
+            host: localhost
+            port: 5000
+            queue-size: 512
+    mail:
+        from: test@localhost
+        base-url: http://127.0.0.1:8080
+    security:
+        authentication:
+            jwt:
+                # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+                base64-secret: YmUyYzA5YWIyMmI5NmM1MjE5Y2RlNDY3ZjgxMjFkMzllODEzZDE2MmFlODllNGU2ODVjYmE5MWVjZDEzYmQzNjgxNGE0NGJkMDE0NmQ5YTVlMzk5ZTM5MmIxNjZmZGM3YWU3OTE3ZGE3YmY2NjU3YzhiOTMxNzdkN2I1MzNhZGQ=
+                # Token is valid 24 hours
+                token-validity-in-seconds: 86400
+    metrics:
+        logs: # Reports metrics in the logs
+            enabled: true
+            report-frequency: 60 # in seconds
+
+# ===================================================================
+# Application specific properties
+# Add your own application properties here, see the ApplicationProperties class
+# to have type-safe configuration, like in the JHipsterProperties above
+#
+# More documentation is available at:
+# https://www.jhipster.tech/common-application-properties/
+# ===================================================================
+
+# application:

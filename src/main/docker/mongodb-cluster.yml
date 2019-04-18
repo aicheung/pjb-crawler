@@ -1,0 +1,16 @@
+version: '2'
+services:
+    pjbcrawler-mongodb:
+        image: mongo:4.0.2
+        ports:
+            - "27017:27017"
+        command: mongos --configdb pjbcrawler-mongodb-config
+    pjbcrawler-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    pjbcrawler-mongodb-config:
+        image: mongo:4.0.2
+        container_name: pjbcrawler-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
