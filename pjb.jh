@@ -1,0 +1,25 @@
+entity Image {
+	imageId Integer,
+    origFileName String,
+    uploadedBy String,
+    views Integer,
+    favorites Integer
+} 
+
+entity Tag {
+    name String
+}
+ 
+ relationship ManyToMany { Image{tags} to Tag{images} }
+
+// Set pagination options
+paginate Image with infinite-scroll 
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
